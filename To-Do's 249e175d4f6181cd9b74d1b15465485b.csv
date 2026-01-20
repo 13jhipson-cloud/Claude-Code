@@ -1,0 +1,41 @@
+﻿Category,Task,Status,Notes,Detail,Due Date,Next Steps
+,DEVELOPMENT>>>,Considering,,,,
+,,Considering,,,,
+,BUDGET MODEL>>>,Doing,,,"January 17, 2026 → February 5, 2026",
+Budget Model,Review python model forecast outputs,Doing,,"update total coverage ratio forecast approaches to get the forecast curves to look more sensibile (no sudden jumps between actual and forecast rates) (i.e., use more trends, etc). Update rate_methodology myself, then see what Claude says…
+
+THEN
+
+review these ‘baseline’ outputs with Will","January 17, 2026",
+Budget Model,Iterate outputs,Considering,,,"January 18, 2026 → January 22, 2026",
+,Guide Ben on SQL model build,Considering,,,"January 18, 2026 → January 23, 2026",
+Budget Model,Finalise & Summarise Outputs,Considering,,,"January 24, 2026 → January 28, 2026",
+,REDTEAM>>>,Considering,,,"January 4, 2026 → January 10, 2026",
+Other,think about how i could clear sharepoint up for ed and how to idetify old/unused files that are no longer needed…,Considering,,,"January 4, 2026",
+Other,"Revisit Oakbrook automation project writeup & retro (make sure I have it written up for myself, RedTeam session [its being used in session jack presented]), in OKR’s, etc",Considering,"Finish automation PROJECT RETRO / WRAPUP: ‘OAKBROOKS FINANCE TRANSFORMATION’ (I.E., MY PROJECT RETRO), heres what we’ve done and heres what we identified and are going to continue to do (present this to bc, oakbrook, redteam [topics: vibecoding, PM]) and im happy to help (come to me for help) - FEW LINKEDIN POSTS! (track eveything completed, audited, time saved, files improved, etc)",,"January 4, 2026",
+Development,"Catchup with Vale: what to action now (‘make sure its not just an email’), and later (progression and compensation)",Considering,,,"January 4, 2026",
+AI,MY CALL AI NOTION MAKE FLOW IS WORKING IN THE BACKGROUND!!,Considering,,,"January 4, 2026",
+Development,Daily/Work%20Life%20Mindset/Mid%20year%20review%202b7e175d4f6180f0a74ec9a0de57d249.md with Will / Ed,Considering,,,"January 4, 2026",
+AI,Get back into weekly ai workflows,Considering,,,"January 4, 2026",
+Development,Writeup my Daily/Work%20Life%20Mindset/Career%20Work%20Priorities%202b7e175d4f6180c7b3feee3e8058c3c9.md,Considering,,,"January 4, 2026",
+Learning,Ensure RedTeam (Career%20&%20Development/Work%20Tracker%20Receipts/RedTeam%202bce175d4f61808f8980e5c4cb5fddc5.md) submissions flow through to my total points and max out each category! Who do I check with? Adoncia?,Considering,,,"January 4, 2026 → January 14, 2026",
+Other,RedTeam financial data literacy deck!,Considering,,,"January 4, 2026",
+Learning,,Considering,,,"January 4, 2026",
+FP&A,"expand mbr commentary prompt into an agent. then think about adding in other data sources (consol file, etc), and creating a proper FP&A Agent. current MBR commentary uses coments ive put into notion for each metric, but we also want an agent which first gives its own opinions and insights, and then we can layer our own commentary inputs ontop of this",Considering,,,"January 4, 2026",
+AI,"Look into personal productivity ai & automations for will & ed again (power automate and copilot updates from bc monthly recording, Claude skills, etc)",Considering,,,"January 4, 2026",
+AI,"draft next ai bulletin and oakbrook newsletter make sure to implement additional sections (e.g., from hive resources), etc",Considering,,,"January 4, 2026",
+FP&A,"Research what could be done/added to MBR in general (from secret CFO research & best practice gpt agent research against our MBR deck and consol file that feeds it - new splits/tables/graphs/styles, etc)",Considering,,,"January 4, 2026",
+FP&A,MBR Commentary - pick this back up at some point? Or at least elements of it?,Considering,,,"January 4, 2026","Create monthly MBR variance analysis and commentary drafter using calude/gpt folder post MBR meeting with will (analyses previous MBR vs new MBR, etc). Try using Manus/context for MBR commentary draft. Then draft July commentary. THIS HAS BEEN UPDATED AND IS READY TO DRAFT!!!"
+AI,"SEE DOCKER MCP YOUTIBE VIDEO!! https://www.youtube.com/watch?v=Q3bMYavB8XA ) - for mini hackathon. cant get http node to work!!!!!!!!! TRY THE SAME IN http://MAKE.COM - docker mcp: firecrawl, linkedin, youtibe transcripts",Considering,,,"January 4, 2026",
+Development,"FB BB Forecasting Model receipts / writeup: make sure I have it written up for myself (including all the budget stuff feeding into board [see Dan’s linkedin, etc]).",Considering,,,"January 4, 2026",
+AI,"Try this for my AI newsletter : build an n8n flow for a finance use-case (use GPT to scope out which is the base use-case for it). then re-use this for finance townhall, linkedin post, etc - BUILD THIS ASAP - ED WANTS SOMETHING TO SHOW!!!!!!!!!!!!! (financial analysis flow/agent?) something for month-end / invoice processing, etc? USE http://MANUS.AI TO CREATE A FULL N8N WORKFLOW FOR ME (MAKE SURE TO GIVE IT CORRECT CONTEXT OF MY N8N SETUO, SPECIFIC WORKFLOWS, FILES, PROCESS MAP, ETC - SEE YOUTUBE MARK KASHEF VIDEO) - BUILD THIS THEN CIRCULATE NEWSLETTER
+",Considering,,,"January 4, 2026",
+FP&A,Secret CFO FP&A L&D,Considering,,,"January 4, 2026",
+Development,Put meeting in with Will for initial thoughts on retrespective BC OKR’s (alligned with my development plan). NEED TO SET MY OKR’S on hibob asap!,Considering,,,"January 4, 2026",
+,OTHER>>>,Considering,,,,
+Development,"Writeup workload / work completed from november & december to include in DDC log and work writeups (all the hard work i did on budget model, iterating outputs, etc)",Considering,,,,
+AI,get up to speed with MCP with Vale & Will to start working/looking at this for Ed,Considering,,,,
+Learning,"CIMA COUNTS TOWARDS TRAINING ATTENDED!!! LOG THIS. ask jack about CIMA SESSIONS COUNTING AS RED TEAM TRAINING ",Considering,,,,
+,"YOU FALL TO THE LEVEL OF YOUR SYSTEMS - ENSURE I HAVE THE CORRECT SYSTEMS/TOOL/TECHNIQUES IN PLACE FOR ALL AREAS OF WORK - put this in place for meetings, 1:1’s, taking on new tasks, AI usage, etc",Considering,,,,
+,,Done,,,,
+AI,Install / setup claude code,Done,,,,
