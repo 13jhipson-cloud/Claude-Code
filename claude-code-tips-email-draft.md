@@ -2,169 +2,78 @@
 
 ---
 
-**Subject:** Tips for Using Claude Code More Efficiently
+**Subject:** 5 Tips to Get More Out of Claude Code
 
-**To:** Team
+**To:** Finance Team
 **From:** [Your Name]
 
 ---
 
 Hi team,
 
-As we continue to use Claude Code day-to-day, I wanted to share some practical tips that will help you get better results, faster. Whether you're just getting started or have been using it for a while, these practices make a real difference.
+A few quick tips to help you get better results from Claude Code in your day-to-day work.
 
 ---
 
-## 1. The CLAUDE.md File
+**1. Set up a CLAUDE.md file — your personal brief for Claude**
 
-This is the single most impactful thing you can set up. Claude Code automatically reads `CLAUDE.md` at the start of every session, so it acts as a persistent brief that you never have to repeat.
+Claude starts every session with no memory of previous ones. A `CLAUDE.md` file fixes this. It's a simple text file that Claude reads automatically at the start of each session, so you don't have to re-explain yourself every time.
 
-**What to put in it:**
+Include things like:
+- Your role and team ("I work in Finance, focused on month-end reporting and budgeting")
+- Preferred output formats ("Always respond in UK English, use tables where possible")
+- Tools and systems you use ("We use Excel, Workday, and NetSuite")
+- Things to avoid ("Never share figures outside of what I provide")
 
-- **Project context** — what the project does, its tech stack, architecture overview
-- **Coding conventions** — naming conventions, preferred patterns, what to avoid
-- **Key commands** — how to run tests, linters, builds, and common scripts
-- **Important constraints** — things Claude should never do (e.g. "never push to main directly", "always add tests for new functions")
-- **Repo structure notes** — where key directories and files live
-
-**Where to put it:**
-
-- Root `CLAUDE.md` — applies to all Claude sessions in the repo
-- Sub-directory `CLAUDE.md` — applies only when Claude is working in that folder (useful for monorepos or projects with distinct frontend/backend)
-
-**Example snippet:**
-
-```markdown
-# Project: MyApp API
-
-## Stack
-Node.js 20, TypeScript, PostgreSQL, Prisma ORM, Jest for testing
-
-## Key Commands
-- `npm run dev` — start local server
-- `npm test` — run test suite
-- `npm run lint` — run ESLint
-
-## Conventions
-- All new functions must have corresponding unit tests
-- Use `snake_case` for database fields, `camelCase` for TypeScript
-- Never commit directly to `main`
-
-## Do Not
-- Add console.log statements to production code
-- Skip error handling at API boundaries
-```
-
-Think of it as an onboarding doc that Claude reads every time — invest a bit of time upfront and every session starts with full context.
+Think of it as a standing brief — set it up once and every session starts in the right place.
 
 ---
 
-## 2. Prompting Best Practices
+**2. Be specific in your prompts**
 
-The quality of what Claude produces is directly tied to how clearly you describe the task. A few habits that consistently improve results:
+The more context you give, the better the output. Vague prompts produce vague results.
 
-**Be specific about what you want**
-Instead of: *"Fix the login bug"*
-Try: *"The login endpoint returns a 500 when the email contains a `+` character. The handler is in `src/auth/login.ts`. Fix the input validation to handle this correctly and add a test case."*
+Instead of: *"Summarise this report"*
+Try: *"Summarise this budget variance report in 5 bullet points for a CFO audience, highlighting anything over 10% variance"*
 
-**Provide relevant context upfront**
-Tell Claude which files are involved, what the expected behaviour is, and what you've already tried. It saves multiple back-and-forth turns.
-
-**Specify the format of the output**
-If you want a list of options, say so. If you want code only with no explanation, say that. If you want a plan before implementation, ask for it explicitly.
-
-**Break large tasks into steps**
-For complex features, ask Claude to first explain its approach, confirm it with you, then implement. This catches misunderstandings early.
-
-**Use the `#` file reference shorthand**
-In the terminal, typing `#filename.ts` lets you reference a file directly in your prompt without Claude having to search for it.
-
-**Ask Claude to think before acting on ambiguous tasks**
-Prefix with: *"Before making any changes, explain your understanding of what needs to be done and what approach you'll take."*
+A simple formula: **Task + Context + Format**
+> *"Draft an email [task] to the FP&A team explaining the Q3 underspend in headcount [context], keeping it to 3 short paragraphs [format]"*
 
 ---
 
-## 3. Session Management and Handover Documents
+**3. Manage your sessions — Claude doesn't remember you**
 
-Claude Code does not retain memory between sessions — each new session starts fresh. Managing context well is key to avoiding repetition and maintaining momentum across long or multi-day pieces of work.
+Each new Claude session starts completely fresh. For longer or ongoing tasks:
 
-**The context window**
-Within a session, Claude has a large but finite context window. On very long sessions, earlier context gets summarised automatically. For tasks that span many files or involve lots of back-and-forth, consider:
-
-- Starting a new session for a new logical task
-- Summarising progress at natural checkpoints
-
-**Handover documents**
-For work spanning multiple sessions, ask Claude to produce a handover note at the end of each session. Prompt it with:
-
-*"Summarise what we've done in this session, what's been completed, what's still outstanding, and any important decisions or context the next session will need."*
-
-Save this as a `HANDOVER.md` or paste it into CLAUDE.md temporarily. At the start of the next session, share it with Claude to restore context instantly.
-
-**Structured progress tracking**
-Ask Claude to maintain a `TODO.md` or task list as you work. Claude Code has a built-in todo tool it uses internally — you can also ask it to write tasks to a file so they persist across sessions.
-
-**Named session notes**
-If you work on multiple streams, keep a `sessions/` folder with dated notes (e.g. `sessions/2024-01-15-auth-refactor.md`) capturing decisions, open questions, and next steps.
+- At the end of a session, ask: *"Summarise what we covered and what's still outstanding"* — save this and paste it at the start of your next session to pick up where you left off
+- Start a new session when switching to a different task — it keeps things clean and focused
+- If a conversation is going off track, type `/clear` to reset without closing the session
 
 ---
 
-## 4. Skills and Custom Tools
+**4. Use skills for repetitive tasks**
 
-Claude Code supports custom **skills** (slash commands) and **tools** (MCP servers) that extend what it can do.
+Skills are shortcuts (typed as `/skill-name`) for tasks you do regularly. Once set up, one command can trigger a full, consistent workflow.
 
-**Skills (slash commands)**
-Skills are pre-written prompt templates you can invoke with `/skill-name`. They're great for repetitive workflows your team runs regularly.
+Useful examples for a finance team:
+- `/summarise-report` — paste in a report and get a structured summary
+- `/draft-email` — turn bullet points into a polished email
+- `/variance-commentary` — generate first-draft commentary on budget variances
+- `/meeting-notes` — format and tidy up rough notes from a meeting
 
-Examples of useful skills to set up:
-- `/commit` — generates a well-formatted commit message from staged changes
-- `/review-pr` — reviews a pull request with a consistent checklist
-- `/write-tests` — writes unit tests for a given function or module
-- `/explain` — provides a plain-language explanation of a piece of code
-
-Skills are defined in your Claude Code settings and can be shared across the team by committing them to the repo.
-
-**MCP (Model Context Protocol) Tools**
-MCP servers give Claude access to external tools and data sources. Useful integrations include:
-
-- **Databases** — let Claude query your database schema and write/validate SQL
-- **GitHub** — Claude can read issues, PRs, and repo metadata directly
-- **Jira/Linear** — connect task management so Claude has ticket context
-- **Slack** — surface relevant conversation threads as context
-- **File systems and APIs** — connect internal tooling Claude can call
-
-MCP servers can be configured in your `.claude/settings.json` file. Check the MCP directory for available servers or build your own.
+Skills save time and ensure consistency across the team. Ask your admin to set up the ones most useful for you.
 
 ---
 
-## 5. Other Tips for Efficiency and Effectiveness
+**5. A few other things worth knowing**
 
-**Use `/clear` to reset context mid-session**
-If a session has gone down an unhelpful path or the context is cluttered, `/clear` resets without closing the session. Useful when switching tasks.
-
-**Leverage the plan mode**
-For non-trivial tasks, start with `Shift+Tab` to enter plan mode. Claude will propose a plan and wait for your approval before making any changes. This prevents it from going off in the wrong direction on complex work.
-
-**Iterative refinement over single big prompts**
-It's often faster to start with a rough working version and iteratively refine than to try to specify every detail upfront. Ask Claude to "get it working first, then we'll clean it up."
-
-**Use `--continue` or `/resume` for interrupted work**
-If a session gets cut off, you can often resume with recent context rather than starting over. Keep handover notes (see above) as a backup.
-
-**Read the output, don't just accept it**
-Claude will produce confident-sounding code that can contain subtle bugs. Always review what it produces, especially around error handling, edge cases, and security-sensitive areas.
-
-**Commit little and often**
-Ask Claude to commit after each logical unit of work. This gives you clean checkpoints to roll back to if a later change goes wrong.
-
-**Ask Claude to explain its changes**
-After implementing something, ask: *"Briefly explain what you changed and why."* This helps you understand the code and catch any misunderstandings.
-
-**Keep CLAUDE.md up to date**
-As the project evolves, update CLAUDE.md. A 10-minute investment to document a new pattern or convention saves every future session from having to re-learn it.
+- **Always review the output.** Claude is a drafting tool, not a final answer — check figures, facts, and tone before using anything externally.
+- **Iterate, don't perfect your prompt.** Start with a rough ask, see what you get, then refine. It's faster than trying to write the perfect prompt upfront.
+- **Paste content directly.** Claude can work with text you paste in — spreadsheet data, email threads, report extracts. The more relevant material you share, the better.
+- **Ask Claude how to use Claude.** If you're unsure how to approach a task, just ask: *"What's the best way to use you for X?"*
 
 ---
 
-Happy to walk through any of these in more detail or help set up CLAUDE.md and skills for our projects.
+Happy to answer any questions or help you set up your CLAUDE.md file.
 
 [Your Name]
